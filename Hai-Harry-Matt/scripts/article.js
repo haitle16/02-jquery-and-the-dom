@@ -53,16 +53,16 @@ rawData.sort(function(a,b) {
 
 // TODO: Refactor these for loops using the .forEach() array method.
 
-for(let i = 0; i < rawData.length; i++) {
-  articles.push(new Article(rawData[i]));
-}
+rawData.forEach(function(rawData){
+  articles.push(new Article(rawData));
+});
 
 for(let i = 0; i < articles.length; i++) {
 
   // REVIEW: below code will hang until TODO about cloned article is handled
   // Once that TODO is done uncomment code
    
-  // $('#articles').append(articles[i].toHtml());
+  $('#articles').append(articles[i].toHtml());
 
   // COMMENT: (STRETCH) Can you figure out why code hangs?
   // It has to do with the clone() method
